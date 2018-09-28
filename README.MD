@@ -2,6 +2,7 @@
 
 ### SPRÁVA EUROFONDOV (DOTÁCIÍ) PRE PODNIKATEĽOV
 **Autor**   Pavol Grofčík
+
 **Tema**    E - správa - Financie
 
 
