@@ -1,0 +1,54 @@
+Do budúceho piatku zámer projektu MSOFT - vypracovať hlavný UC
+Podávanie eurofondov - schvaľovanie, podanie žiadosti, verifikácia
+e -podpisu
+
+https://www.vicepremier.gov.sk/index.php/elektronicke-podavanie-ziadosti-o-eurofondy-odbura-cast-byrokraci/index.html - eurofondy
+http://www.zhodnoteniefinancii.sk/eurofondy/proces-vybavenia-dotacie/	- proces
+
+Advantages - inovácie,fast & using e=government services,
+EU integration, lower corruption dividing funds
+
+Disadvantages = requires ICT, e-signature,registration
+
+Raising EU funds = získať eurofondy
+use grants for their development
+Focuse on companies that want to innovate in smart way
+& save environment sources - solar collectors, green building,
+installing smart power consumer, use natural resources more 
+efficiently
+
+How it works: 
+
+Phases:
+Preparative phase:
+
+Companies have to be registered & 
+should have e-signature according by the law.
+
+Then, They ask for grants by filling an application
+on the web e-government & sign it by e-signature
+Also they make a business plan for using EU funds
+
+Officers for granting rewiev it and move to the next step
+
+Analysis Phase:
+
+The next step is detail analysis on business plan. They
+decide to grant it or not if it is not very good idea or 
+company does not have clear vision.
+
+Final phase: 
+
+If it is granted, move to the funds redirection or 
+give them final decision about why they have rejected it
+
+The whole process lasts about 3-18 month nowadays without
+e-gov support, this process could last 3-9 months by using 
+e-gov, so time is money, isnt it?
+
+Zaplatenie poplatku pre Podanie EU fondov 1500€
+
+
+Best UC 6 - max 12 steps
+User interaction with user, decompose them
+Next week 1 UC!

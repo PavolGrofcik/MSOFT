@@ -1,0 +1,11 @@
+UC - názov musí byť v rozkazovacom spôsobe - Zaeviduj, Zobraz, Registruj, Zobraz
+Nespomína sa User Interface - klikne tlačidlo - zadaj všeobecne interakciu
+Marek - napísať request pre urobenie simply web v html a css - registrácia, vybrať prílohy
+
+
+Alternatívny proces - vzdať proces nahrať nahratia BP
+Include - verifikuj E-podpis, + korektonosť formatu údajov(UC nahraj prílohy)
+
+Systém skontroluje údaje o žiadateľovi - krok pre systém
+Extend = optional steps, can be extended
+Include = obligatory, the main flow
