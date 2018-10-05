@@ -1,0 +1,25 @@
+Use cases, sequence diagrams, activity diagram
+
+V prípade že 1 UC include druhý, musíš urobiť osobitný flow
+pre pomocný include diagram! (Spýťať na referenciu?)
+
+Extend pomáha vysporiadanie sa so zložitosťou
+Napr UC01 ??
+
+Sekvenčný diagram znázorňuje konkrétnu akciu, ktorá
+vychádza z daných UC diagramov, modelujem konkrétne
+akcie, nie napr zobraz(), predpokladáme že j
+e už vytvorený
+Controller je len pre entity, nie na. vytvorenie
+nového zobrazovacieho okna
+Najdôležitejšie častí sú kontroller a model
+Views nie sú dôležité
+
+Sekvenčný diagram UC 01 - opt - zákazník nevzdal proces
+nahrávania BP
+Štruktúra vychádza z daného UC -> digram tried
+
+Generalizácia - šípka od konkrétnej entity k 
+abstraktnej
+
+
