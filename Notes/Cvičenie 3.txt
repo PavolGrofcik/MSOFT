@@ -3,8 +3,9 @@ Use cases, sequence diagrams, activity diagram
 V prípade že 1 UC include druhý, musíš urobiť osobitný flow
 pre pomocný include diagram! (Spýťať na referenciu?)
 
-Extend pomáha vysporiadanie sa so zložitosťou
-Napr UC01 ??
+Extend vzťah pomáha na vysporiadanie sa so zložitosťou
+pri dlhom UC
+Napr UC01 Zaeviduj BP plán
 
 Sekvenčný diagram znázorňuje konkrétnu akciu, ktorá
 vychádza z daných UC diagramov, modelujem konkrétne
@@ -14,6 +15,9 @@ Controller je len pre entity, nie na. vytvorenie
 nového zobrazovacieho okna
 Najdôležitejšie častí sú kontroller a model
 Views nie sú dôležité
+Include vzťahy musia byť v activity diagram, pozri
+na Vraničovu prednášku - right click -> advance ->
+convert as invocation!
 
 Sekvenčný diagram UC 01 - opt - zákazník nevzdal proces
 nahrávania BP
