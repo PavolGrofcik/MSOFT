@@ -1,0 +1,6 @@
+Diagram tried - zahŕňa iba 1 okno pre boundary
+Pri rozhraní product & order there should be 1 interface
+Controller use always interface
+
+Urobiť správcu pre E-podpis a BP,Rozhodnutie, a správcu pre rozhodnutie na 
+konkrétnu žiadosť, agregácia žiadosť -> BP
