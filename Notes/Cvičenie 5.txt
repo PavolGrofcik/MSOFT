@@ -1,0 +1,15 @@
+Validácia diagramu sekvencií
+Hlavný dôraz sa kladie na interakciu medzi kontrollerom, aktérom a entitanmi
+Interface je sprostredkovateľ, nie je podstatný
+
+Opraviť chybu v UC - > "vyplň údaje" nesprávne
+Najprv treba vytvoriť formulár pre údaje, napr
+vytvor nový business plán -> vyplň udaje pre BP
+-> (controller) skontroluje údaje -> ulož údaje
+
+Return message from interface are not important so much
+
+Writing use case is the first action -> text, then identify
+relationships among them, finally create sequence diagram,
+class diagram .. etc
+
