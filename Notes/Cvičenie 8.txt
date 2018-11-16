@@ -1,0 +1,8 @@
+Diagram tried je vhodné rozdeliť podľa 
+jednotlivých a podobných UC. Snaha 
+modelovať hlavne entity a nie interface
+(obrazovka). Znázornenie hlavnej logiky
+
+Kontroller na komunikáciu používateľov
+Interface nemôže komunikovať s Entitami,
+vždy komunikuje len so správcom
