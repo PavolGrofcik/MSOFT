@@ -41,6 +41,14 @@ public class Main extends Application {
 		launch(args);
 	}
 	
+	public static void showHomePage() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("MainItems.fxml"));
+		BorderPane pane = loader.load();
+		mainLayout.setCenter(pane);
+		
+	}
+	
 	
 	/*Metóda zobrazí login na prihlásenia klienta*/
 	public void showLogin() throws IOException {
@@ -51,5 +59,23 @@ public class Main extends Application {
 		Scene scene = new Scene(mainLayout);
 		primaryStage.setScene(scene);;
 		primaryStage.show();
+	}
+	
+	 //Metóda zobrazí mód pre Officer-a
+    public static void showOfficerLogin() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("../view/Dashboard.fxml"));
+        BorderPane officerLogin = loader.load();
+        mainLayout.setCenter(officerLogin);
+    }
+    
+    
+	/*Metóda vytvorí nový stage s názvom stageName*/
+	public static void showNewStage(String stageName) throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource(stageName));
+		
+		BorderPane pane = loader.load();
+		mainLayout.setCenter(pane);
 	}
 }

@@ -28,10 +28,11 @@
             <TextField fx:id="userField" alignment="CENTER" maxWidth="-Infinity" prefWidth="230.0" promptText="Username" />
             <Label text="Password" />
             <PasswordField fx:id="passwordField" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="230.0" promptText="Password" />
+            <Label fx:id="info" visible="false" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Button minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Login" />
-                  <Button fx:id="logoutButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeWindow" prefWidth="100.0" text="Logout" />
+                  <Button fx:id="loginButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#login" prefWidth="100.0" text="Login" />
+                  <Button fx:id="closeButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeWindow" prefWidth="100.0" text="Logout" />
                </children>
             </HBox>
          </children>
