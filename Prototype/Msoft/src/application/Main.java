@@ -2,9 +2,13 @@ package application;
 	
 import java.io.IOException;
 
+import controller.Controller;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
@@ -19,6 +23,8 @@ import javafx.scene.layout.BorderPane;
 public class Main extends Application {
 	
 	
+	public static Controller controller = Controller.getInstance();
+	
 	private Stage primaryStage;
     private static BorderPane mainLayout;
 	
@@ -28,9 +34,21 @@ public class Main extends Application {
 		try {
 			this.primaryStage = primaryStage;
 			this.primaryStage.setTitle("Eurofonds User Manager");
-			this.primaryStage.getIcons().add(new Image("etc/Logo4.png"));
+			this.primaryStage.getIcons().add(new Image("etc/images/Logo4.png"));
+			
+			
+			/*Správne ukonèenie programu a session factory pre Hibernate*/
+			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+			    @Override
+			    public void handle(WindowEvent t) {
+			    	controller.shutDown();
+			        Platform.exit();
+			        System.exit(0);
+			    }
+			});
 			
 			showLogin();
+			//showMainItems();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -61,6 +79,13 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 	
+	public void showMainItems() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("MainItems.fxml"));
+        BorderPane officerLogin = loader.load();
+        mainLayout.setCenter(officerLogin);
+	}
+	
 	 //Metóda zobrazí mód pre Officer-a
     public static void showOfficerLogin() throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -78,4 +103,6 @@ public class Main extends Application {
 		BorderPane pane = loader.load();
 		mainLayout.setCenter(pane);
 	}
+	
+	
 }

@@ -27,14 +27,15 @@ public class DashboadController {
 	/*MetÛda ukonËÌ aplik·ciu*/
 	@FXML
 	private void closeWindow() {
+		Main.controller.shutDown();
 		Platform.exit();
 	}
 	
 	/*MetÛda vr·ti pouûÌvateæa o okno spaù*/
 	@FXML
 	private void goBack() throws IOException {
-		//Main.showNewStage("../application/Main.fxml");
-		Main.showHomePage();
+		Main.showNewStage("../application/Main.fxml");
+
 	}
 	
 	/*MetÛda prejde na zaevidovanie ûiadosti*/

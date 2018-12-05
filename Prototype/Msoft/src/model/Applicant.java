@@ -1,8 +1,23 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="applicant")
 public class Applicant {
 	
-	private String login;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	@Column(name = "username")
+	private String user;
+	@Column(name = "password")
 	private String password;
 	
 	public Applicant() {
@@ -10,11 +25,11 @@ public class Applicant {
 	}
 
 	public String getLogin() {
-		return login;
+		return user;
 	}
 
 	public void setLogin(String login) {
-		this.login = login;
+		this.user = login;
 	}
 
 	public String getPassword() {

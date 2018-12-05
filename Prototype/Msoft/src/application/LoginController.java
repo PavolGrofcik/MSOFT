@@ -2,21 +2,21 @@ package application;
 
 import java.io.IOException;
 
+import controller.Controller;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController {
 	
-	private static final String LOGIN = "Applicant";
-	private static final String PASSWORD = "helloworld";
 	private static final String WARNING = "Some fields are empty!";
 	private static final String WARNING2 = "Invalid username or password!";
 
-	private Main main;
+	private static Controller LoginController = Controller.getInstance();
 	
 	@FXML
 	private TextField userField;
@@ -32,7 +32,11 @@ public class LoginController {
 	
 	@FXML
 	private void closeWindow() {	
-		Platform.exit();
+		Stage stage = (Stage) closeButton.getScene().getWindow();
+	    stage.close();
+	    Main.controller.shutDown();
+	    Platform.exit();
+        System.exit(0);
 	}
 	
 	
@@ -41,23 +45,19 @@ public class LoginController {
 	private void login() throws IOException {
 		info.setText("");
 		info.setVisible(true);
-		
+
 		if (checkInput()) {
-			
-			if(userField.getText().equals(LOGIN) 
-					&& passwordField.getText().equals(PASSWORD)) {
-				
+
+			if (LoginController.login(userField.getText(), passwordField.getText())) {
 				Main.showOfficerLogin();
-				
-			}else {
+			} else {
 				userField.clear();
 				passwordField.clear();
-				
+
 				info.setVisible(true);
 				info.setText(WARNING2);
 			}
-		}else {
-			
+		} else {
 			info.setVisible(true);
 			info.setText(WARNING);
 		}
