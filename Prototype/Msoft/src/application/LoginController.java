@@ -19,8 +19,8 @@ import javafx.stage.Stage;
 
 public class LoginController {
 	
-	private static final String WARNING = "Some fields are empty!";
-	private static final String WARNING2 = "Invalid username or password!";
+	private static final String WARNING = "Niektoré položky sú prázdne!";
+	private static final String WARNING2 = "Neplatné Meno alebo Heslo";
 
 	private static Controller LoginController = Controller.getInstance();
 	
@@ -52,8 +52,10 @@ public class LoginController {
 		info.setText("");
 		info.setVisible(true);
 
+		//Overenie vstupu
 		if (checkInput()) {
 
+			//Overenie platnosti údajov
 			if (LoginController.login(userField.getText(), passwordField.getText())) {
 				Main.showApplicantLogin();
 			} else {

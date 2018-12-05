@@ -14,7 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 
 /**
- * Main view pre prihlásenia klienta (Žiadate¾a)
+ * Main view: Homepage pre prihlásenia klienta (Žiadate¾a)
  * @author grofc
  *
  */
@@ -27,7 +27,7 @@ public class Main extends Application {
 	private Stage primaryStage;
     private static BorderPane mainLayout;
 	
-    //Init
+    //Init view
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -47,26 +47,15 @@ public class Main extends Application {
 			});
 			
 			showLogin();
-			//showMainItems();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
-	/*Metóda zobrazí HomePage*/
-	public static void showHomePage() throws IOException {
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("MainItems.fxml"));
-		BorderPane pane = loader.load();
-		mainLayout.setCenter(pane);	
-	}
-	
-	
+
 	/*Metóda zobrazí login na prihlásenia klienta*/
 	public void showLogin() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
@@ -78,22 +67,13 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 	
-	/*Metóda zobrazí úvodný login na prihlásenie žiadate¾a*/
-	public void showMainItems() throws IOException {
-		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("MainItems.fxml"));
-        BorderPane officerLogin = loader.load();
-        mainLayout.setCenter(officerLogin);
-	}
-	
-	 //Metóda zobrazí mód pre Officer-a
+	 //Metóda zobrazí mód pre Žiadate¾a
     public static void showApplicantLogin() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("../view/Dashboard.fxml"));
         BorderPane officerLogin = loader.load();
         mainLayout.setCenter(officerLogin);
     }
-    
     
 	/*Metóda vytvorí nový stage s názvom stageName*/
 	public static void showNewStage(String stageName) throws IOException {
@@ -103,6 +83,4 @@ public class Main extends Application {
 		BorderPane pane = loader.load();
 		mainLayout.setCenter(pane);
 	}
-	
-	
 }

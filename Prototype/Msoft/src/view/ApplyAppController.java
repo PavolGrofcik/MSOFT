@@ -30,12 +30,13 @@ public class ApplyAppController {
 	@FXML
 	private TextArea description;
 	
-	
+	/*Zruöenie ûiadosti*/
 	@FXML
 	public void cancelApplication() throws IOException {
 		Main.showNewStage("../view/Dashboard.fxml");
 	}
 	
+	/*MetÛda odoöle ûiadosù na pos˙denie*/
 	@FXML
 	public void sendApplication() {
 		
