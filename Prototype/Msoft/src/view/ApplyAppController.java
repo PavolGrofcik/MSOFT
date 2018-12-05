@@ -12,8 +12,8 @@ import javafx.scene.control.TextField;
 
 public class ApplyAppController {
 	
-	private static final String WARNING = "Some fields are empty!";
-	private static final String STATUS = "Application has been sent!";
+	private static final String WARNING = "NiektorÈ poloûky s˙ pr·zdne!";
+	private static final String STATUS = "éiadosù bola ˙speöne odoslan·!";
 
 	@FXML
 	private Label info;
@@ -47,8 +47,6 @@ public class ApplyAppController {
 			info.setText(WARNING);
 		}
 	}
-	
-	
 	
 	/*MetÛda overÌ platnosù vstupu*/
 	private boolean checkInputData() {

@@ -63,8 +63,7 @@ public class Main extends Application {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("MainItems.fxml"));
 		BorderPane pane = loader.load();
-		mainLayout.setCenter(pane);
-		
+		mainLayout.setCenter(pane);	
 	}
 	
 	

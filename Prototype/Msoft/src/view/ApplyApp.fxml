@@ -34,17 +34,20 @@
                             <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="131.0" minHeight="10.0" prefHeight="131.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <TextField fx:id="username" alignment="CENTER" maxWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" />
                               <TextField fx:id="surname" alignment="CENTER" maxWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="company" alignment="CENTER" maxWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextArea fx:id="description" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="90.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Name" />
-                              <Label text="Surname" GridPane.rowIndex="1" />
-                              <Label text="Company" GridPane.rowIndex="2" />
-                              <Label text="Description (Optional)" GridPane.rowIndex="3" />
+                              <TextArea fx:id="description" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="90.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Meno" />
+                              <Label text="Priezvisko" GridPane.rowIndex="1" />
+                              <Label text="Spoločnosť" GridPane.rowIndex="2" />
+                              <Label text="Description (Optional)" GridPane.rowIndex="4" />
+                              <Label text="Adresa" GridPane.rowIndex="3" />
+                              <TextField fx:id="company1" alignment="CENTER" maxWidth="-Infinity" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>
@@ -56,8 +59,8 @@
             </BorderPane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Button fx:id="apply" mnemonicParsing="false" onAction="#sendApplication" prefWidth="100.0" text="Apply!" />
-                  <Button fx:id="revoke" mnemonicParsing="false" onAction="#cancelApplication" prefWidth="100.0" text="Exit" />
+                  <Button fx:id="apply" mnemonicParsing="false" onAction="#sendApplication" prefWidth="100.0" text="Podaj!" />
+                  <Button fx:id="revoke" mnemonicParsing="false" onAction="#cancelApplication" prefWidth="100.0" text="Zruš" />
                </children>
             </HBox>
          </children>

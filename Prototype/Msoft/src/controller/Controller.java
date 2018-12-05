@@ -31,6 +31,7 @@ public class Controller {
 	}
 	
 	
+	/*Metóda vráti single inštanciu Controller-a*/
 	public static Controller getInstance() {
 		if(controller == null) {
 			controller = new Controller();
@@ -40,6 +41,7 @@ public class Controller {
 	}
 	
 	
+	/*Metóda ukonèí session s DB*/
 	public void shutDown() {
 		this.factory.close();
 	}
@@ -86,7 +88,7 @@ public class Controller {
 		}else {
 			//Zaevidovanie novej žiadosti
 			Application application = new Application(name, surname, company, description, grant.getId());
-			application.setId(1);
+			application.setId(2);
 			application.setCharged(false);
 			application.setPaid(false);
 			
