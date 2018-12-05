@@ -19,16 +19,15 @@ import javafx.scene.layout.BorderPane;
  *
  */
 
-
 public class Main extends Application {
 	
-	
+	//Singleton Controller
 	public static Controller controller = Controller.getInstance();
 	
 	private Stage primaryStage;
     private static BorderPane mainLayout;
 	
-    
+    //Init
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -59,6 +58,7 @@ public class Main extends Application {
 		launch(args);
 	}
 	
+	/*Metóda zobrazí HomePage*/
 	public static void showHomePage() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("MainItems.fxml"));
@@ -78,6 +78,7 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 	
+	/*Metóda zobrazí úvodný login na prihlásenie žiadate¾a*/
 	public void showMainItems() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("MainItems.fxml"));
@@ -86,7 +87,7 @@ public class Main extends Application {
 	}
 	
 	 //Metóda zobrazí mód pre Officer-a
-    public static void showOfficerLogin() throws IOException {
+    public static void showApplicantLogin() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("../view/Dashboard.fxml"));
         BorderPane officerLogin = loader.load();

@@ -14,6 +14,7 @@ public class HibernateUtil {
 	
 	private static SessionFactory factory;
 	
+	//Naèítanie cfg súboru na init
 	static {
 		try {
 			factory = new Configuration().configure("resources/hibernate.cfg.xml").buildSessionFactory();

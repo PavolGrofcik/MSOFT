@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="EurofondsApprovalManager">
+            <and mandatory="true" name="EvidenciaŽiadosti">
+                <alt mandatory="true" name="Platba">
+                    <feature name="Kartou"/>
+                    <feature name="Prevodom"/>
+                </alt>
+                <alt mandatory="true" name="VýberŽiadosti">
+                    <feature name="Priamo"/>
+                    <feature name="Katalóg"/>
+                    <feature name="Vyhľadaním"/>
+                </alt>
+            </and>
+            <and mandatory="true" name="EvidenciaBP">
+                <feature mandatory="true" name="Epodpis"/>
+                <alt mandatory="true" name="VýberBP">
+                    <feature name="Link"/>
+                    <feature name="File"/>
+                </alt>
+                <feature mandatory="true" name="SpracovanieSúhlasu"/>
+            </and>
+            <feature name="KatalógGrantov"/>
+            <feature name="VyhľadanieŽiadostí"/>
+            <feature name="VyhľadanieRozhodnutí"/>
+            <and mandatory="true" name="MailSchránka">
+                <and mandatory="true" name="Admin">
+                    <feature name="DoručenieSprávy"/>
+                    <feature name="HromadnáSpráva"/>
+                </and>
+            </and>
+            <and name="FAQ">
+                <or name="Pomoc">
+                    <feature name="Telefonicky"/>
+                    <feature name="Mailom"/>
+                </or>
+            </and>
+            <or mandatory="true" name="SchvaľovanieGrantov">
+                <and name="PridelenieGrantu">
+                    <feature mandatory="true" name="PrevodFinancií"/>
+                    <feature mandatory="true" name="PoskytnutieDokladu"/>
+                </and>
+                <feature name="ZamietnutieŽiadosti"/>
+                <feature name="KontrolaGrantov"/>
+            </or>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

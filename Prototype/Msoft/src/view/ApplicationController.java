@@ -35,7 +35,7 @@ public class ApplicationController {
 		setHeader();
 	}
 
-	
+	/*Init nastavenie Tableview */
 	private void setHeader() {
 		 TableColumn id = new TableColumn("ID");
 	        TableColumn name = new TableColumn("Name");
@@ -65,6 +65,7 @@ public class ApplicationController {
 	}
 	 
 	 
+	//Naèítanie dát do Tableview
 	@FXML
 	public void addData() {
 		tableView.setItems(data);

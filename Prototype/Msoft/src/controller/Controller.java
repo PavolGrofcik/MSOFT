@@ -11,6 +11,7 @@ import model.Grant;
 
 /**
  * Singleton Controller na riadenie business logiky aplikácie
+ * Práca s DB pomocou Hibernate JPA
  * @author grofc
  *
  */

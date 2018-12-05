@@ -1,7 +1,6 @@
 package application;
 
 import java.io.IOException;
-
 import controller.Controller;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -10,6 +9,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+
+/**
+ * LoginController zodpovedný za správne prihlásenie žiadate¾a
+ * @author grofc
+ *
+ */
 
 public class LoginController {
 	
@@ -49,7 +55,7 @@ public class LoginController {
 		if (checkInput()) {
 
 			if (LoginController.login(userField.getText(), passwordField.getText())) {
-				Main.showOfficerLogin();
+				Main.showApplicantLogin();
 			} else {
 				userField.clear();
 				passwordField.clear();
