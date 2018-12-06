@@ -27,8 +27,9 @@
             <feature name="VyhľadanieRozhodnutí"/>
             <and mandatory="true" name="MailSchránka">
                 <and mandatory="true" name="Admin">
-                    <feature name="DoručenieSprávy"/>
+                    <feature name="SpamFilter"/>
                     <feature name="HromadnáSpráva"/>
+                    <feature name="Úložisko5GB"/>
                 </and>
             </and>
             <and name="FAQ">

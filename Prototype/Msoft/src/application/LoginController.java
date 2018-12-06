@@ -36,6 +36,7 @@ public class LoginController {
 	@FXML
 	private Button loginButton;
 	
+	/*Správne ukonèenie aplikácie*/
 	@FXML
 	private void closeWindow() {	
 		Stage stage = (Stage) closeButton.getScene().getWindow();
