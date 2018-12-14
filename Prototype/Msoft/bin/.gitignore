@@ -1,5 +1,5 @@
-/controller/
 /application/
-/resources/
-/model/
+/controller/
+/etc/
 /view/
+/singleton/

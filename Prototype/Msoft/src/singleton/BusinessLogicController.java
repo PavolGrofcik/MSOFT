@@ -1,4 +1,4 @@
-package controller;
+package singleton;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,30 +12,31 @@ import model.Grant;
 /**
  * Singleton Controller na riadenie business logiky aplik·cie
  * Pr·ca s DB pomocou Hibernate JPA
+ * ZakomentovanÈ riadky vyûaduj˙ nastaven˙ lok·lnu DB
  * @author grofc
  *
  */
 
 
-public class Controller {
+public class BusinessLogicController {
 	
-	private SessionFactory factory;
-	private static Controller controller;
+	//private SessionFactory factory;
+	private static BusinessLogicController controller;
 
 	private static Grant grant;
 	private static Applicant user;
 	
 	
 	/*Konötruktor*/
-	private Controller() {
-		this.factory = HibernateUtil.getSessionFactory();
+	private BusinessLogicController() {
+		//this.factory = HibernateUtil.getSessionFactory();
 	}
 	
 	
 	/*MetÛda vr·ti single inötanciu Controller-a*/
-	public static Controller getInstance() {
+	public static BusinessLogicController getInstance() {
 		if(controller == null) {
-			controller = new Controller();
+			controller = new BusinessLogicController();
 		}
 		
 		return controller;
@@ -44,14 +45,14 @@ public class Controller {
 	
 	/*MetÛda ukonËÌ session s DB*/
 	public void shutDown() {
-		this.factory.close();
+		//this.factory.close();
 	}
 	
 	
 	/*MetÛda na overenie zadan˝ch prihlasovacÌch ˙dajov */
 	public boolean login(String username, String password) {
 		
-		Session session = factory.openSession();
+		/*Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
 		
 		Applicant applicant = null;
@@ -78,7 +79,9 @@ public class Controller {
 			tx.commit();
 			session.close();
 			return false;
-		}
+		}*/
+		
+		return true;
 	}
 	
 	/*MetÛda vytvorÌ nov˙ ûiadosù */
@@ -87,8 +90,11 @@ public class Controller {
 		if(grant == null) {
 			System.out.println("Grant not selected!");
 		}else {
+			
+			new Application(name,surname,company,description,grant.getId());
+			
 			//Zaevidovanie novej ûiadosti
-			Application application = new Application(name, surname, company, description, grant.getId());
+		/*	Application application = new Application(name, surname, company, description, grant.getId());
 			application.setId(2);
 			application.setCharged(false);
 			application.setPaid(false);
@@ -100,13 +106,13 @@ public class Controller {
 			
 			tx.commit();
 			session.close();
-			
+			*/
 		}
 	}
 	
 	/*MetÛda prida zvolen˝ Grant na vytvorenie ûiadosti*/
 	public static void setSelectedGrant(Grant grant) {
-		Controller.grant = grant;
+		BusinessLogicController.grant = grant;
 	}
 	
 }

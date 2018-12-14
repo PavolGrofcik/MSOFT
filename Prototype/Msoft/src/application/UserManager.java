@@ -1,7 +1,7 @@
 package application;
 
 import java.io.IOException;
-import controller.Controller;
+
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import singleton.BusinessLogicController;
 
 
 /**
@@ -17,12 +18,12 @@ import javafx.stage.Stage;
  *
  */
 
-public class LoginController {
+public class UserManager {
 	
 	private static final String WARNING = "Niektoré položky sú prázdne!";
 	private static final String WARNING2 = "Neplatné Meno alebo Heslo";
 
-	private static Controller LoginController = Controller.getInstance();
+	private static BusinessLogicController LoginController = BusinessLogicController.getInstance();
 	
 	@FXML
 	private TextField userField;
@@ -57,7 +58,7 @@ public class LoginController {
 		if (checkInput()) {
 
 			//Overenie platnosti údajov
-			if (LoginController.login(userField.getText(), passwordField.getText())) {
+			/*if (LoginController.login(userField.getText(), passwordField.getText())) {
 				Main.showApplicantLogin();
 			} else {
 				userField.clear();
@@ -65,7 +66,9 @@ public class LoginController {
 
 				info.setVisible(true);
 				info.setText(WARNING2);
-			}
+			}*/
+			
+			Main.showApplicantLogin();
 		} else {
 			info.setVisible(true);
 			info.setText(WARNING);

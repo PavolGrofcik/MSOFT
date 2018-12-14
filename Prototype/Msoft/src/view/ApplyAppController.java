@@ -3,12 +3,12 @@ package view;
 import java.io.IOException;
 
 import application.Main;
-import controller.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import singleton.BusinessLogicController;
 
 public class ApplyAppController {
 	
@@ -41,7 +41,7 @@ public class ApplyAppController {
 	public void sendApplication() {
 		
 		if(checkInputData()) {
-			Controller.createApplication(username.getText(), surname.getText(),
+			BusinessLogicController.createApplication(username.getText(), surname.getText(),
 					company.getText(), description.getText());
 			info.setText(STATUS);
 		}else {

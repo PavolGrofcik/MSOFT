@@ -2,13 +2,13 @@ package application;
 	
 import java.io.IOException;
 
-import controller.Controller;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import singleton.BusinessLogicController;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
@@ -22,7 +22,7 @@ import javafx.scene.layout.BorderPane;
 public class Main extends Application {
 	
 	//Singleton Controller
-	public static Controller controller = Controller.getInstance();
+	public static BusinessLogicController controller = BusinessLogicController.getInstance();
 	
 	private Stage primaryStage;
     private static BorderPane mainLayout;

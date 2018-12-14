@@ -4,7 +4,6 @@ package view;
 import java.io.IOException;
 
 import application.Main;
-import controller.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,13 +14,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import model.Grant;
+import singleton.BusinessLogicController;
 
 public class ApplicationController {
 	
 	 private static  ObservableList<Grant> data =
-	            FXCollections.observableArrayList(new Grant(1, "Podpora inovácií IT", true),
+	            FXCollections.observableArrayList(
+	            		new Grant(0, "Inovácia do využívania solárnych panelov", true),
+	            		new Grant(1, "Podpora inovácií IT", true),
 	            		new Grant(2, "Rozvoj vzdelávania zamestnancov", true),
 	            		new Grant(3, "Podpora nezamestnanosti na vidieku", false));
+	 
+	 private static ObservableList<Grant> init = FXCollections.observableArrayList(new Grant(0, "Inovácia do využívania solárnych panelov", true));
 	
 	@FXML
 	private TableView tableView;
@@ -59,9 +63,12 @@ public class ApplicationController {
 	        
 	        tableView.setOnMouseClicked((MouseEvent event) -> {
 	            if(event.getButton().equals(MouseButton.PRIMARY)){
-	               Controller.setSelectedGrant((Grant)tableView.getSelectionModel().getSelectedItem());
+	               BusinessLogicController.setSelectedGrant((Grant)tableView.getSelectionModel().getSelectedItem());
 	            }
 	        });
+	        
+	        //Init Data
+	        tableView.setItems(init);
 	}
 	 
 	 
@@ -71,9 +78,18 @@ public class ApplicationController {
 		tableView.setItems(data);
 	}
 	
-	@FXML
+	//@FXML
 	public void ApplyForApplication() throws IOException {
-			Main.showNewStage("../view/ApplyApp.fxml");
+		
+		Grant check;
+		check = (Grant) tableView.getSelectionModel().getSelectedItem();
+		System.out.println("Selected" + check.getName());
+		
+		if(check == null) {
+			System.out.println("Grant not Selected!");
+		}else {
+		Main.showNewStage("../view/ApplyApp.fxml");
+		}
 	}
 
 }
