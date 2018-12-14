@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -17,6 +18,8 @@ import model.Grant;
 import singleton.BusinessLogicController;
 
 public class ApplicationController {
+	
+	private static final String WARNING = "Grant not Selected!";
 	
 	 private static  ObservableList<Grant> data =
 	            FXCollections.observableArrayList(
@@ -33,9 +36,12 @@ public class ApplicationController {
 	private Button show;
 	@FXML 
 	private Button apply;
+	@FXML
+	private Label info;
 	
 	@FXML
 	private void initialize(){
+		info.setText("");
 		setHeader();
 	}
 
@@ -78,17 +84,22 @@ public class ApplicationController {
 		tableView.setItems(data);
 	}
 	
-	//@FXML
+	@FXML
 	public void ApplyForApplication() throws IOException {
 		
+		//Overenie èi žiadate¾ zvoli zaevidovaný Grant
 		Grant check;
-		check = (Grant) tableView.getSelectionModel().getSelectedItem();
-		System.out.println("Selected" + check.getName());
+		
+		try {
+			check = (Grant) tableView.getSelectionModel().getSelectedItem();
+		}catch (Exception e) {
+			check = null;
+		}
 		
 		if(check == null) {
-			System.out.println("Grant not Selected!");
+			info.setText(WARNING);
 		}else {
-		Main.showNewStage("../view/ApplyApp.fxml");
+			Main.showNewStage("../view/ApplyApp.fxml");
 		}
 	}
 

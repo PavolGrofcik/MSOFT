@@ -13,7 +13,8 @@ import singleton.BusinessLogicController;
 
 
 /**
- * LoginController zodpovedný za správne prihlásenie žiadate¾a
+ * UserManager zodpovedný za správne prihlásenie žiadate¾a a správu operácií
+ * vykonaných žiadate¾om
  * @author grofc
  *
  */

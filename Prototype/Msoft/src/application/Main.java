@@ -33,7 +33,7 @@ public class Main extends Application {
 		try {
 			this.primaryStage = primaryStage;
 			this.primaryStage.setTitle("Eurofonds User Manager");
-			this.primaryStage.getIcons().add(new Image("etc/images/Logo4.png"));
+			this.primaryStage.getIcons().add(new Image("etc/Logo4.png"));
 			
 			
 			/*Správne ukonèenie programu a session factory pre Hibernate*/
