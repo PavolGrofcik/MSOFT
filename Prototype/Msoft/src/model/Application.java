@@ -160,5 +160,13 @@ public class Application {
 	public void setPaid(boolean paid) {
 		this.paid = paid;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Application [id=" + id + ", name=" + name + ", surname=" + surname + ", companyName=" + companyName
+				+ ", description=" + description + ", date=" + date + ", grantId=" + grantId + ", charged=" + charged
+				+ ", paid=" + paid + "]";
+	}
 	
 }
